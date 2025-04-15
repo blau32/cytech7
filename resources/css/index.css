@@ -102,28 +102,8 @@ a {
 }
 
 /* ページ送り*/
-.pagination{
+.pagination {
+    margin-top: 30px; /* ボーダーとページネーションの間に30pxの余白 */
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
-}
-
-.pagination-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.pagination-wrapper nav > div {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-}
-
-.pagination-wrapper nav .page-link {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-decoration: none;
-    color: #333;
 }

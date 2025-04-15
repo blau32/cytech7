@@ -72,9 +72,10 @@
             @endforeach
         </tbody>
     </table>
-    <!-- Bladeのページネーション表示（Tailwindデフォルト） -->
-    <div class="pagination-wrapper">
-        {{ $products->appends(request()->query())->links() }}
+
+    <!-- Bladeのページネーション表示-->
+    <div class="d-flex justify-content-center">
+        {{ $products->links() }}
     </div>
 </div>
 @endsection
