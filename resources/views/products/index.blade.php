@@ -46,7 +46,7 @@
                     @if($product->img_path)
                     <img src="{{ asset('storage/' . $product->img_path) }}" alt="商品画像" width="50">
                     @else
-                    画像なし
+                        画像なし
                     @endif
                 </td>
 
@@ -74,7 +74,7 @@
     </table>
 
     <!-- Bladeのページネーション表示-->
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center mt-4">
         {{ $products->links() }}
     </div>
 </div>
