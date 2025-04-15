@@ -12,7 +12,7 @@
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
+                <li>{{ $error }}</li>
                 @endforeach
             </ul>
         </div>
@@ -25,16 +25,14 @@
                 type="email"
                 name="email"
                 placeholder="メールアドレス"
-                class="login-form__input"
-            >
+                class="login-form__input">
 
             <!-- パスワード入力欄 -->
             <input
                 type="password"
                 name="password"
                 placeholder="パスワード"
-                class="login-form__input"
-            >
+                class="login-form__input">
 
             <!-- ボタン -->
             <div class="login-form__button-wrapper">
@@ -42,16 +40,14 @@
                 <!-- 新規登録ボタン -->
                 <a
                     href="{{ route('register') }}"
-                    class="login-form__register-button"
-                >
+                    class="login-form__register-button">
                     新規登録
                 </a>
 
                 <!-- ログインボタン -->
                 <button
                     type="submit"
-                    class="login-form__login-button"
-                >
+                    class="login-form__login-button">
                     ログイン
                 </button>
             </div>
@@ -60,9 +56,9 @@
 </div>
 
 @if(session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
+<div class="alert alert-success">
+    {{ session('success') }}
+</div>
 @endif
 
 @endsection

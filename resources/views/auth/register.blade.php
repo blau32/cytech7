@@ -12,7 +12,7 @@
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
+                    <li>{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>
@@ -25,45 +25,39 @@
                 name="username"
                 placeholder="ユーザー名"
                 class="register-form__input"
-                required
-            >
+                required>
             <!-- メールアドレス入力欄 -->
             <input
                 type="email"
                 name="email"
                 placeholder="メールアドレス"
                 class="register-form__input"
-                required
-            >
+                required>
             <!-- パスワード入力欄 -->
             <input
                 type="password"
                 name="password"
                 placeholder="パスワード"
                 class="register-form__input"
-                required
-            >
+                required>
             <!-- パスワード確認入力欄 -->
             <input
                 type="password"
                 name="password_confirmation"
                 placeholder="パスワード（確認用）"
                 class="register-form__input"
-                required
-            >
+                required>
 
             <div class="register-form__button-wrapper">
                 <button
                     type="submit"
-                    class="register-form__register-button"
-                >
+                    class="register-button">
                     新規登録
                 </button>
 
                 <a
                     href="{{ route('login') }}"
-                    class="register-form__back-button"
-                >
+                    class="back-button">
                     戻る
                 </a>
             </div>

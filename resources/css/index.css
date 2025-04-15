@@ -1,9 +1,9 @@
-/* 見出し（商品一覧画面タイトル */
+/* 共通：見出し（商品一覧画面タイトル */
 h1 {
     margin-bottom: 40px;
 }
 
-/* 検索フォーム共通（テキストボックス,セレクトボックス,ボタン） */
+/* 共通：検索フォーム（テキストボックス,セレクトボックス,ボタン） */
 .index_form {
     margin-bottom: 30px;
 }
@@ -50,7 +50,8 @@ h1 {
 }
 
 /* テーブルのセル */
-.product-table th, .product-table td {
+.product-table th,
+.product-table td {
     padding: 12px;
     text-align: center;
     border-bottom: 1px solid #ffffff;
@@ -67,7 +68,7 @@ h1 {
 }
 
 /* 共通ボタンスタイル（あり？） */
-button {
+.common-button {
     width: 90px;
     height: 35px;
     font-size: 16px;
@@ -100,6 +101,29 @@ a {
     text-decoration: none;
 }
 
+/* ページ送り*/
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
 
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
 
+.pagination-wrapper nav > div {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
 
+.pagination-wrapper nav .page-link {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+}

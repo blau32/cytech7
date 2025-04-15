@@ -1,9 +1,3 @@
-@if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
-
 @extends('layouts.app')
 
 @section('content')
@@ -17,9 +11,9 @@
         <select name="company_id" class="index_select_form">
             <option value="">メーカー名</option>
             @foreach ($companies as $company)
-                <option value="{{ $company->id }}" {{ request('company_id') == $company->id ? 'selected' : '' }}>
-                    {{ $company->company_name }}
-                </option>
+            <option value="{{ $company->id }}" {{ request('company_id') == $company->id ? 'selected' : '' }}>
+                {{ $company->company_name }}
+            </option>
             @endforeach
         </select>
 
@@ -38,50 +32,49 @@
                 <th>メーカー名</th>
                 <th>
                     <a href="{{ route('products.create') }}">
-                        <button type="button" class="index_create_button">新規登録</button>
+                        <button type="button" class="common-button index_create_button">新規登録</button>
                     </a>
                 </th> <!-- テーブルカラム内に新規登録ボタン -->
             </tr>
         </thead>
         <tbody>
             @foreach ($products as $product)
-                <tr>
-                    <td>{{ $product->id }}</td>
+            <tr>
+                <td>{{ $product->id }}</td>
 
-                    <td>
-                        @if($product->img_path)
-                            <img src="{{ asset('storage/' . $product->img_path) }}" alt="商品画像" width="50">
-                        @else
-                            画像なし
-                        @endif
-                    </td>
+                <td>
+                    @if($product->img_path)
+                    <img src="{{ asset('storage/' . $product->img_path) }}" alt="商品画像" width="50">
+                    @else
+                    画像なし
+                    @endif
+                </td>
 
-                    <td>{{ $product->product_name }}</td>
-                    <td>¥{{ number_format($product->price) }}</td>
-                    <td>{{ $product->stock }}</td>
-                    <td>{{ $product->company->company_name ?? '' }}</td>
+                <td>{{ $product->product_name }}</td>
+                <td>¥{{ number_format($product->price) }}</td>
+                <td>{{ $product->stock }}</td>
+                <td>{{ $product->company->company_name ?? '' }}</td>
 
-                    <td>
-                        <!-- 詳細ボタン -->
-                        <a href="{{ route('products.show', $product->id) }}">
-                            <button type="button" class="index_detail_button">詳細</button>
-                        </a>
+                <td>
+                    <!-- 詳細ボタン -->
+                    <a href="{{ route('products.show', $product->id) }}">
+                        <button type="button" class="common-button index_detail_button">詳細</button>
+                    </a>
 
-                        <!-- 削除ボタン -->
-                        <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline-block;" onsubmit="return confirm('本当に削除しますか？')">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="index_delete_button">削除</button>
-                        </form>
-                    </td>
-                </tr>
+                    <!-- 削除ボタン -->
+                    <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline-block;" onsubmit="return confirm('本当に削除しますか？')">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="common-button index_delete_button">削除</button>
+                    </form>
+                </td>
+            </tr>
             @endforeach
         </tbody>
     </table>
-
-    <!-- ページネーション -->
-    <div class="pagination">
-        {{ $products->links() }}
+    <!-- Bladeのページネーション表示（Tailwindデフォルト） -->
+    <div class="pagination-wrapper">
+        {{ $products->appends(request()->query())->links() }}
     </div>
 </div>
 @endsection

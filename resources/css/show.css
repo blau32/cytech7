@@ -1,71 +1,12 @@
-/* 詳細・編集画面の全体枠 */
-.product-detail-wrapper {
-    width: 45%;
-    padding: 20px;
-    border: 1px solid #000000; /* 外枠線 */
+.product_item-info {
+    font-size: 20px;
 }
 
-/* 各項目 */
-.product-detail__item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+.product_form-item textarea.product_detail-comment {
+    width: 100%;
+    min-height: 100px; /* 最低100pxの高さ */
+    resize: none; /* ユーザーが手動でサイズ変更できないようにする */
+    border: 1px solid #ccc;
+    font-size: 20px;
+    margin-left: 4rem;
 }
-
-/* ラベル部分 */
-.product-detail__item label {
-    width: 150px; /* ラベル幅を揃える */
-    font-size: 16px;
-    font-weight: bold;
-    text-align: left; /* 左寄せ */
-}
-
-/* データ表示部分 */
-.product-detail__item div {
-    font-size: 16px;
-    width: 50%;
-    padding-left: 15px; /* ラベルとデータの間に少し余白 */
-}
-
-.product-detail__row {
-    display: flex;
-    flex-direction: column; /* 上下に並べる */
-    align-items: flex-start; /* 左端に合わせる */
-    margin-bottom: 20px; /* 下に少し余白 */
-}
-
-.product-detail__label {
-    font-weight: bold;
-    margin-bottom: 5px; /* ラベルとテキストエリアの間に少し空ける */
-}
-
-.product-detail__comment {
-    width: 100%;         /* 幅いっぱいに広げる */
-    min-height: 100px;    /* 最低100pxの高さ */
-    resize: none;        /* ユーザーが手動でサイズ変更できないようにする */
-    border: 1px solid #ccc; /* 薄いグレーの枠線 */
-    padding: 10px;
-    margin-left: 70px;
-    font-size: 14px;
-}
-
-/* ボタンエリア */
-.product-detail__buttons {
-    display: flex;
-    justify-content: left;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-/* 編集ボタン */
-.product-detail__edit-button {
-    background-color: #ff8c00;
-}
-
-/* 戻るボタン */
-.product-detail__back-button {
-    background-color: rgb(34, 200, 255);
-}
-
-
-

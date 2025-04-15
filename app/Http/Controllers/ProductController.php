@@ -13,23 +13,13 @@ class ProductController extends Controller
      * 商品一覧画面
      */
     public function index(Request $request)
-    // ブラウザから送られてきた情報（リクエスト）を $request という変数に入れる。
-    // ブラウザから送られたフォームデータ（検索キーワードや会社ID）を受け取るため。
-    // Requestを受け取らないと、ユーザーが何を入力したかがわからない。
-
-
     {
         // 商品一覧のクエリ
         $query = Product::query();
 
         // 商品名検索（部分一致）
-        if ($request->filled('keyword')) { //キーワードが入力されていた場合
+        if ($request->filled('keyword')) {
             $query->where('product_name', 'like', '%' . $request->keyword . '%');
-            //部分一致検索
-            //where() :データベースのデータを、条件に合うものだけに絞り込む
-            //where(列名, 演算子, 比較する値)
-            //like:部分一致:SELECT * FROM products WHERE product_name LIKE '%product_name%'と同じ
-            //'%' → SQLで「何文字でもいい」という意味のワイルドカード
         }
 
         // メーカー検索（完全一致）
@@ -55,11 +45,11 @@ class ProductController extends Controller
         // バリデーション（入力チェック）
         $request->validate([
             'product_name' => 'required|string|max:255',
-            'company_id' => 'required|integer',
-            'price' => 'required|integer',
-            'stock' => 'required|integer',
-            'comment' => 'nullable|string',
-            'img_path' => 'nullable|image|max:2048', // 画像ファイルのみ、最大2MB
+            'company_id'   => 'required|integer|exists:companies,id',
+            'price'        => 'required|integer|min:0|max:999999999',
+            'stock'        => 'required|integer|min:0|max:999999999',
+            'comment'      => 'nullable|string|max:1000',
+            'img_path'     => 'nullable|image|max:2048',
         ]);
 
         // 画像の保存処理
@@ -102,10 +92,13 @@ class ProductController extends Controller
         return view('products.edit', compact('product', 'companies'));
     }
 
-    //商品削除
-    public function destroy($id){
+    /**
+     * 商品削除
+     */
+    public function destroy($id)
+    {
         // 削除対象の商品を取得
-        $product = \App\Models\Product::findOrFail($id); //findOrFail($id)	IDで商品を取得。なければ404エラー
+        $product = \App\Models\Product::findOrFail($id);
 
         // 商品を削除
         $product->delete();
@@ -114,7 +107,8 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('success', '商品を削除しました');
     }
 
-    public function show($id){
+    public function show($id)
+    {
         // 指定されたIDの商品データを取得
         $product = Product::findOrFail($id);
 
@@ -127,28 +121,28 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
-        // ★まずバリデーションを実施
+        // バリデーションを実施
         $request->validate([
             'product_name' => 'required|string|max:255',
-            'company_id' => 'required|integer',
-            'price' => 'required|integer',
-            'stock' => 'required|integer',
-            'comment' => 'nullable|string',
-            'img_path' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // 画像ファイルのバリデーション
+            'company_id'   => 'required|integer|exists:companies,id',
+            'price'        => 'required|integer|min:0|max:999999999',
+            'stock'        => 'required|integer|min:0|max:999999999',
+            'comment'      => 'nullable|string|max:1000',
+            'img_path'     => 'nullable|image|max:2048',
         ]);
 
-        // ★対象の商品データを取得
+        // 対象の商品データを取得
         $product = Product::findOrFail($id);
 
-         // データ更新
+        // データ更新
         $product->product_name = $request->product_name;
         $product->company_id = $request->company_id;
         $product->price = $request->price;
         $product->stock = $request->stock;
         $product->comment = $request->comment;
 
-        // ★画像がアップロードされた場合のみ処理
-        if  ($request->hasFile('img_path')) {
+        // 画像がアップロードされた場合のみ処理
+        if ($request->hasFile('img_path')) {
             $image = $request->file('img_path');
             $path = $image->store('images', 'public');  // storage/app/public/imagesに保存
             $product->img_path = $path; // DBにパス保存

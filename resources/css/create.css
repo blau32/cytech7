@@ -1,40 +1,32 @@
-
+/* create, show, edit共通------------------ */
 /* 商品登録フォーム全体の枠 */
-.product-form-wrapper {
+.product_form-wrapper {
     width: 60%;
     padding: 20px;
     border: 1px solid #000000;
 }
 
 /* フォームの各項目 */
-.product-form__item {
+.product_form-item {
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    align-items: baseline;
+    margin-bottom: 1.5rem;
 }
 
 /* ラベル */
-.product-form__item label {
-    width: 150px;
-    font-size: 16px;
+.product_form-item label {
+    width: 13rem;
+    font-size: 20px;
     font-weight: bold;
     text-align: left;
 }
 
-/* 必須マーク（*） */
-.required {
-    color: red;
-    margin-left: 5px;
-    font-size: 20px;
-    vertical-align: super;
-}
-
 /* 入力欄、セレクトボックス、テキストエリア */
-.product-form__item input[type="text"],
-.product-form__item input[type="number"],
-.product-form__item input[type="file"],
-.product-form__item select,
-.product-form__item textarea {
+.product_form-item input[type="text"],
+.product_form-item input[type="number"],
+.product_form-item input[type="file"],
+.product_form-item select,
+.product_form-item textarea {
     width: 50%;
     padding: 8px;
     font-size: 16px;
@@ -43,24 +35,33 @@
 }
 
 /* テキストエリア */
-.product-form__item textarea {
+.product_form-item textarea {
     height: 100px;
 }
 
 /* ボタンエリア */
-.product-form__buttons {
+.product_form-buttons {
     display: flex;
     justify-content: left;
     gap: 20px;
     margin-top: 30px;
 }
 
+/* 必須マーク（*） ※create,editのみ*/
+.required {
+    color: red;
+    margin-left: 5px;
+    font-size: 20px;
+    vertical-align: super;
+}
+
+/* 以下は名称をそれぞれ変えるか検討中... */
 /* 新規登録ボタン */
-.product-form__submit-button {
+.product_form-submitbutton {
     background-color: orange;
 }
 
 /* 戻るボタン */
-.product-form__back-button {
+.product_form-backbutton {
     background-color: rgb(34, 200, 255);
 }
