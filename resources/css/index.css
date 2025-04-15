@@ -1,0 +1,105 @@
+/* 見出し（商品一覧画面タイトル */
+h1 {
+    margin-bottom: 40px;
+}
+
+/* 検索フォーム共通（テキストボックス,セレクトボックス,ボタン） */
+.index_form {
+    margin-bottom: 30px;
+}
+
+/* 検索フォーム：入力欄 */
+.index_search_form,
+.index_select_form,
+.index_search_button {
+    height: 40px; /* 高さを揃える */
+    line-height: 40px; /* 中の文字を上下中央に揃える */
+    font-size: 16px;
+    vertical-align: middle; /* 中央寄せ */
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/*  検索フォーム */
+.index_search_form {
+    width: 250px;
+    margin-right: 30px;
+}
+
+/* セレクトボックス */
+.index_select_form {
+    width: 250px;
+    margin-right: 30px;
+}
+
+/*検索ボタン */
+.index_search_button {
+    width: 80px;
+    background-color: #ffffff;
+    border: 1px solid rgb(187, 187, 187);
+    cursor: pointer;
+}
+
+/* テーブル全体 */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid black;
+    font-size: 16px; /* テーブル内の文字を大きく */
+}
+
+/* テーブルのセル */
+.product-table th, .product-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ffffff;
+}
+
+/* 奇数行グレー */
+.product-table tbody tr:nth-child(odd) {
+    background-color: #c7c7c7;
+}
+
+/* 偶数行ホワイト */
+.product-table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* 共通ボタンスタイル（あり？） */
+button {
+    width: 90px;
+    height: 35px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 35px; /* 高さと同じline-heightで文字を中央に */
+    cursor: pointer;
+}
+
+/* 新規登録ボタン */
+.index_create_button {
+    background-color: #ff8c00;
+}
+
+/* 詳細ボタン */
+.index_detail_button {
+    margin-right: 3px;
+    background-color: rgb(34, 200, 255);
+}
+
+/* 削除ボタン */
+.index_delete_button {
+    margin-left: 3px;
+    background-color: red;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+

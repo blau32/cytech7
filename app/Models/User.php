@@ -17,8 +17,10 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+    // $fillable：create()などで許可するカラムを指定する
     protected $fillable = [
-        'name',
+        'username',
         'email',
         'password',
     ];
@@ -28,6 +30,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+    //  $hidden：表示するときに隠すカラムを指定する（パスワードなど）
     protected $hidden = [
         'password',
         'remember_token',
@@ -38,6 +42,8 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
+
+    //  $casts：型変換を自動で行う（例:datetimeなど）
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];

@@ -1,0 +1,66 @@
+
+/* 商品登録フォーム全体の枠 */
+.product-form-wrapper {
+    width: 60%;
+    padding: 20px;
+    border: 1px solid #000000;
+}
+
+/* フォームの各項目 */
+.product-form__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* ラベル */
+.product-form__item label {
+    width: 150px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* 必須マーク（*） */
+.required {
+    color: red;
+    margin-left: 5px;
+    font-size: 20px;
+    vertical-align: super;
+}
+
+/* 入力欄、セレクトボックス、テキストエリア */
+.product-form__item input[type="text"],
+.product-form__item input[type="number"],
+.product-form__item input[type="file"],
+.product-form__item select,
+.product-form__item textarea {
+    width: 50%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* テキストエリア */
+.product-form__item textarea {
+    height: 100px;
+}
+
+/* ボタンエリア */
+.product-form__buttons {
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* 新規登録ボタン */
+.product-form__submit-button {
+    background-color: orange;
+}
+
+/* 戻るボタン */
+.product-form__back-button {
+    background-color: rgb(34, 200, 255);
+}
