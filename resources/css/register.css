@@ -5,7 +5,7 @@
 
 .register-form__title {
     padding: 0.5em;
-    font-size: 24px;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -22,7 +22,7 @@
 .register-form__input {
     width: 50%;
     margin: 1em 0;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .register-form__button-wrapper {
@@ -31,31 +31,29 @@
     margin-top: 2em;
 }
 
-button.register-button {
+.register-form__button--submit {
     background-color: #ff8c00;
     margin-right: 3em;
-
     width: 10em;
     color: black;
     border-radius: 30px;
-    font-size: 15px;
+    font-size: 1rem;
     border: none;
     padding: 7px;
     margin-top: 20px;
     cursor: pointer;
 }
 
-.back-button {
+.register-form__button--back {
     background-color: #00ffff;
     margin-left: 3em;
-
     width: 10em;
     color: black;
     border-radius: 30px;
-    font-size: 15px;
+    font-size: 1rem;
     border: none;
-    padding: 7px;
-    margin-top: 20px;
+    padding: 0.5em;
+    margin-top: 1em;
     cursor: pointer;
     text-decoration: none;
 }

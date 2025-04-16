@@ -51,15 +51,16 @@
             <div class="register-form__button-wrapper">
                 <button
                     type="submit"
-                    class="register-button">
+                    class="register-form__button--submit">
                     新規登録
                 </button>
 
                 <a
                     href="{{ route('login') }}"
-                    class="back-button">
+                    class="register-form__button--back">
                     戻る
                 </a>
+
             </div>
         </form>
     </div>
