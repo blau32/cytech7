@@ -1,0 +1,120 @@
+.product-edit {
+    padding: 2rem;
+}
+
+.product-edit__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 15rem;
+    margin-bottom: 2rem;
+}
+
+.product-edit__errors {
+    margin-bottom: 2rem;
+}
+
+.product-edit__wrapper {
+    width: 60%;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid #000;
+    border-radius: 0.5rem;
+}
+
+.product-edit__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* 各項目 */
+.product-edit__form-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* ラベル */
+.product-edit__label {
+    width: 12rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* 入力不可の情報（例：ID表示） */
+.product-edit__readonly {
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+/* 必須マーク */
+.product-edit__required {
+    color: red;
+    margin-left: 0.25rem;
+    font-size: 1.25rem;
+}
+
+/* 入力欄、セレクトボックス、テキストエリア、ファイル */
+.product-edit__input,
+.product-edit__select,
+.product-edit__textarea,
+.product-edit__file {
+    flex: 1;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+
+/* テキストエリア */
+.product-edit__textarea {
+    height: 6rem;
+    resize: vertical;
+}
+
+/* ボタン配置 */
+.product-edit__button-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* 共通ボタンスタイル（create, index, loginと共通） */
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 6.5rem;
+    transition: background-color 0.2s;
+}
+
+/* ボタンの色分け */
+.button--primary {
+    background-color: #f48a12;
+    margin-right: 2em;
+}
+
+.button--back {
+    background-color: #21e2f3;
+    margin-left: 2em;
+}
+
+.alert {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #f44336;
+    background-color: #ffecec;
+    color: #d8000c;
+    font-size: 1rem;
+    line-height: 1.5;
+}

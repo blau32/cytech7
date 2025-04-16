@@ -1,12 +1,100 @@
-.product_item-info {
-    font-size: 20px;
+.product-show {
+    padding: 2rem;
 }
 
-.product_form-item textarea.product_detail-comment {
-    width: 100%;
-    min-height: 100px; /* 最低100pxの高さ */
-    resize: none; /* ユーザーが手動でサイズ変更できないようにする */
+.product-show__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 15rem;
+    margin-bottom: 2rem;
+}
+
+.product-show__wrapper {
+    width: 60%;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid #000;
+    border-radius: 0.5rem;
+}
+
+.product-show__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.product-show__label {
+    width: 12rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.product-show__value {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.product-show__image {
+    max-width: 150px;
     border: 1px solid #ccc;
-    font-size: 20px;
-    margin-left: 4rem;
+    border-radius: 0.25rem;
+}
+
+.product-show__textarea {
+    width: 100%;
+    min-height: 6rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-left: 4em;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    resize: none;
+    background-color: #f9f9f9;
+}
+
+
+/* ボタン配置 */
+.product-show__button-wrapper {
+    margin-top: 2rem;
+}
+
+/* 共通ボタンスタイル（create, edit と同じ） */
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 2rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 6.5rem;
+    transition: background-color 0.2s;
+}
+
+.button--primary {
+    background-color: #f48a12;
+    margin-right: 2em;
+}
+
+.button--back {
+    background-color: #f0f0f0;
+    color: black;
+    margin-left: 2em;
+}
+
+.alert {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #f44336;
+    background-color: #ffecec;
+    color: #d8000c;
+    font-size: 1rem;
+    line-height: 1.5;
 }

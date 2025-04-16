@@ -12,6 +12,7 @@ export default defineConfig({
                 'resources/css/index.css',
                 'resources/css/create.css',
                 'resources/css/show.css',
+                'resources/css/edit.css',
             ],
             refresh: true,
         }),

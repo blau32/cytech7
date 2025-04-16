@@ -1,67 +1,111 @@
-/* create, show, edit共通------------------ */
-/* 商品登録フォーム全体の枠 */
-.product_form-wrapper {
+.product-create {
+    padding: 2rem;
+}
+
+.product-create__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 15rem;
+    margin-bottom: 2rem;
+}
+
+.product-create__errors {
+    margin-bottom: 2rem;
+}
+
+.product-create__wrapper {
     width: 60%;
-    padding: 20px;
-    border: 1px solid #000000;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid #000;
+    border-radius: 0.5rem;
+}
+
+.product-create__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 /* フォームの各項目 */
-.product_form-item {
+.product-create__form-item {
     display: flex;
-    align-items: baseline;
-    margin-bottom: 1.5rem;
+    align-items: center;
+    gap: 2rem;
 }
 
 /* ラベル */
-.product_form-item label {
-    width: 13rem;
-    font-size: 20px;
+.product-create__label {
+    width: 12rem;
+    font-size: 1.25rem;
     font-weight: bold;
     text-align: left;
 }
 
-/* 入力欄、セレクトボックス、テキストエリア */
-.product_form-item input[type="text"],
-.product_form-item input[type="number"],
-.product_form-item input[type="file"],
-.product_form-item select,
-.product_form-item textarea {
-    width: 50%;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* テキストエリア */
-.product_form-item textarea {
-    height: 100px;
-}
-
-/* ボタンエリア */
-.product_form-buttons {
-    display: flex;
-    justify-content: left;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-/* 必須マーク（*） ※create,editのみ*/
-.required {
+/* 必須マーク */
+.product-create__required {
     color: red;
-    margin-left: 5px;
-    font-size: 20px;
-    vertical-align: super;
+    margin-left: 0.25rem;
+    font-size: 1.25rem;
 }
 
-/* 以下は名称をそれぞれ変えるか検討中... */
-/* 新規登録ボタン */
-.product_form-submitbutton {
-    background-color: orange;
+/* 共通フォーム要素（input, select, textarea） */
+.product-create__input,
+.product-create__select,
+.product-create__textarea,
+.product-create__file {
+    flex: 1;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
 }
 
-/* 戻るボタン */
-.product_form-backbutton {
-    background-color: rgb(34, 200, 255);
+.product-create__textarea {
+    height: 6rem;
+    resize: vertical;
+}
+
+/* ボタン配置 */
+.product-create__button-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* ボタン共通スタイル */
+.button {
+    display: inline-block;
+    padding: 0.rem 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 6.5rem;
+    transition: background-color 0.2s;
+}
+
+/* 各種ボタンの色 */
+.button--primary {
+    background-color: #f48a12;
+}
+
+.button--back {
+    background-color:#21e2f3;
+}
+
+.alert {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #f44336;
+    background-color: #ffecec;
+    color: #d8000c;
+    font-size: 1rem;
+    line-height: 1.5;
 }

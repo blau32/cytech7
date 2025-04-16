@@ -38,18 +38,10 @@
             <div class="login-form__button-wrapper">
 
                 <!-- 新規登録ボタン -->
-                <a
-                    href="{{ route('register') }}"
-                    class="login-form__register-button">
-                    新規登録
-                </a>
+                <a href="{{ route('register') }}" class="login-form__button login-form__button--register">新規登録</a>
 
                 <!-- ログインボタン -->
-                <button
-                    type="submit"
-                    class="login-form__login-button">
-                    ログイン
-                </button>
+                <button type="submit" class="login-form__button login-form__button--submit">ログイン</button>
             </div>
         </form>
     </div>

@@ -27,6 +27,7 @@
     'resources/css/index.css',
     'resources/css/create.css',
     'resources/css/show.css' ,
+    'resources/css/edit.css' ,
     ])
 </head>
 

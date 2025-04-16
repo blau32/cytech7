@@ -28,32 +28,46 @@
 .register-form__button-wrapper {
     display: flex;
     justify-content: center;
+    gap: 3rem;
     margin-top: 2em;
 }
 
-.register-form__button--submit {
-    background-color: #ff8c00;
-    margin-right: 3em;
-    width: 10em;
-    color: black;
-    border-radius: 30px;
+/* 共通ボタン */
+.register-form__button {
+    width: 10rem;
     font-size: 1rem;
+    border-radius: 2rem;
     border: none;
-    padding: 7px;
-    margin-top: 20px;
+    padding: 0.5rem 0;
+    margin-top: 1rem;
     cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.5rem;
 }
 
+/* 新規登録ボタン */
+.register-form__button--submit {
+    background-color: #ff8c00;
+    color: black;
+}
+
+/* 戻るボタン */
 .register-form__button--back {
     background-color: #00ffff;
-    margin-left: 3em;
-    width: 10em;
     color: black;
-    border-radius: 30px;
-    font-size: 1rem;
-    border: none;
-    padding: 0.5em;
-    margin-top: 1em;
-    cursor: pointer;
     text-decoration: none;
+}
+
+.alert {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #f44336;
+    background-color: #ffecec;
+    color: #d8000c;
+    font-size: 1rem;
+    line-height: 1.5;
 }
