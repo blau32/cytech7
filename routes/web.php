@@ -44,9 +44,3 @@ Route::delete('/products/{id}', [App\Http\Controllers\ProductController::class, 
 
 // 商品詳細画面（show）
 Route::get('/products/{id}', [App\Http\Controllers\ProductController::class, 'show'])->name('products.show');
-
-//商品新規登録画面へのルート
-Route::get('/create', [ProductController::class, 'create'])->name('products.create');
-
-
-Route::resource('products', ProductController::class);

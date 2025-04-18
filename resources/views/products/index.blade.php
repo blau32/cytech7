@@ -42,7 +42,7 @@
                 <th>在庫数</th>
                 <th>メーカー名</th>
                 <th>
-                    <a href="{{ route('products.create') }}" class="button button--primary">
+                    <a href="{{ route('products.create') }}" class="product-index__button product-index__button--primary">
                         新規登録
                     </a>
                 </th>
@@ -50,7 +50,7 @@
         </thead>
         <tbody>
             @foreach ($products as $product)
-            <tr>
+            <tr class="{{ $loop->odd ? 'row-odd' : 'row-even' }}">
                 <td>{{ $product->id }}</td>
                 <td>
                     @if($product->img_path)
@@ -64,7 +64,7 @@
                 <td>{{ $product->stock }}</td>
                 <td>{{ $product->company->company_name ?? '' }}</td>
                 <td>
-                    <a href="{{ route('products.show', $product->id) }}" class="button button--detail">
+                    <a href="{{ route('products.show', $product->id) }}" class="product-index__button product-index__button--detail">
                         詳細
                     </a>
                     <form
@@ -75,7 +75,7 @@
                     >
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="button button--delete">削除</button>
+                        <button type="submit" class="product-index__button product-index__button--delete">削除</button>
                     </form>
                 </td>
             </tr>

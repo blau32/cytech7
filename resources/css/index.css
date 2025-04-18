@@ -27,11 +27,11 @@
 
 /* 各要素の幅調整 */
 .product-index__form-input {
-    width: 15rem;
+    width: 20rem;
 }
 
 .product-index__form-select {
-    width: 15rem;
+    width: 20rem;
 }
 
 .product-index__form-button {
@@ -43,8 +43,9 @@
 /* 一覧テーブル */
 .product-index__table {
     width: 100%;
+    max-width: 900px;
     border-collapse: collapse;
-    border: 0.125rem solid #000;
+    border: 1px solid #000;
     font-size: 1.5rem;
 }
 
@@ -55,33 +56,45 @@
     border-bottom: 1px solid #ccc;
 }
 
+.product-index__table--head {
+    height:4em;
+}
+
+.row-odd {
+    background-color: #c2c0c0; /* グレー */
+}
+
+.row-even {
+    background-color: #ffffff; /* ホワイト */
+}
+
 /* ボタン共通設計 */
-.button {
+.product-index__button {
     display: inline-block;
-    width: 6.5rem;
-    padding: 0.5rem;
     font-size: 1rem;
     text-align: center;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
     border: none;
     cursor: pointer;
     text-decoration: none;
     color: #000;
 }
 
-.button--primary {
+.product-index__button--primary {
     background-color: #f48a12;
+    width: 6.5rem;
+    padding: 0.5rem;
 }
 
-.button--detail {
+.product-index__button--detail {
     background-color: #21e2f3;
-    margin-right: 0.3em;
+    padding: 0.2rem 1.5rem;
 }
 
-.button--delete {
+.product-index__button--delete {
     background-color: #f44336;
     color: white;
-    margin-left: 0.3em;
+    padding: 0.2rem 1.5rem;;
 }
 
 /* ページネーション */
