@@ -55,7 +55,7 @@
 
         <!-- ボタン部分 -->
         <div class="product-common__button-wrapper">
-            <a href="{{ route('products.edit', $product->id) }}" class="button product-common__button--register--update--edit ">編集</a>
+            <a href="{{ route('products.edit', $product->id) }}" class="button product-common__button--primary">編集</a>
             <a href="{{ route('products.index') }}" class="button product-common__button--back">戻る</a>
         </div>
     </div>

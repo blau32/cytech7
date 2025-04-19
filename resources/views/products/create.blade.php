@@ -102,7 +102,7 @@
 
             <!-- ボタン -->
             <div class="product-common__button-wrapper">
-                <button type="submit" class="button product-common__button--register--update--edit ">新規登録</button>
+                <button type="submit" class="button product-common__button--primary">新規登録</button>
                 <a href="{{ route('products.index') }}" class="button product-common__button--back">戻る</a>
             </div>
         </form>
