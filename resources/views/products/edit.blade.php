@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="product-edit">
+<div class="main-container">
     <h1 class="product-edit__title">商品情報編集画面</h1>
 
     @if ($errors->any())
-        <div class="product-edit__errors alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+    <div class="product-edit__errors alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
     @endif
 
     <div class="product-edit__wrapper">
@@ -19,15 +19,14 @@
             method="POST"
             action="{{ route('products.update', $product->id) }}"
             enctype="multipart/form-data"
-            class="product-edit__form"
-        >
+            class="product-edit__form">
             @csrf
             @method('PUT')
 
-            <!-- ID表示のみ -->
+            <!-- ID 表示のみ -->
             <div class="product-edit__form-item">
                 <label class="product-edit__label">ID</label>
-                <div class="product-edit__readonly">{{ $product->id }}</div>
+                <div class="product-edit__readonly">{{ $product->id }}.</div>
             </div>
 
             <!-- 商品名 -->
@@ -41,8 +40,7 @@
                     id="product_name"
                     class="product-edit__input"
                     value="{{ old('product_name', $product->product_name) }}"
-                    required
-                >
+                    required>
             </div>
 
             <!-- メーカー名 -->
@@ -54,12 +52,12 @@
                     name="company_id"
                     id="company_id"
                     class="product-edit__select"
-                    required
-                >
+                    required>
+                    <option value="">選択してください</option>
                     @foreach ($companies as $company)
-                        <option value="{{ $company->id }}" {{ old('company_id', $product->company_id) == $company->id ? 'selected' : '' }}>
-                            {{ $company->company_name }}
-                        </option>
+                    <option value="{{ $company->id }}" {{ old('company_id', $product->company_id) == $company->id ? 'selected' : '' }}>
+                        {{ $company->company_name }}
+                    </option>
                     @endforeach
                 </select>
             </div>
@@ -75,8 +73,7 @@
                     id="price"
                     class="product-edit__input"
                     value="{{ old('price', $product->price) }}"
-                    required
-                >
+                    required>
             </div>
 
             <!-- 在庫数 -->
@@ -90,8 +87,7 @@
                     id="stock"
                     class="product-edit__input"
                     value="{{ old('stock', $product->stock) }}"
-                    required
-                >
+                    required>
             </div>
 
             <!-- コメント -->
@@ -100,25 +96,23 @@
                 <textarea
                     name="comment"
                     id="comment"
-                    class="product-edit__textarea"
-                >{{ old('comment', $product->comment) }}</textarea>
+                    class="product-edit__textarea">{{ old('comment', $product->comment) }}</textarea>
             </div>
 
-            <!-- 画像 -->
+            <!-- 商品画像 -->
             <div class="product-edit__form-item">
                 <label for="img_path" class="product-edit__label">商品画像</label>
                 <input
                     type="file"
                     name="img_path"
                     id="img_path"
-                    class="product-edit__file"
-                >
+                    class="product-edit__file">
             </div>
 
             <!-- ボタン -->
             <div class="product-edit__button-wrapper">
-                <button type="submit" class="button button--primary">更新</button>
-                <a href="{{ route('products.index') }}" class="button button--back">戻る</a>
+                <button type="submit" class="button product-edit__button--submit">更新</button>
+                <a href="{{ route('products.index') }}" class="button product-edit__button--back">戻る</a>
             </div>
         </form>
     </div>

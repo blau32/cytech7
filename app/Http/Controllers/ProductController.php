@@ -46,7 +46,8 @@ class ProductController extends Controller
     public function show($id)
     {
         // ビューに渡す
-        return view('products.show', compact('product', 'company'));
+        $product = Product::findOrFail($id);
+        return view('products.show', compact('product'));
     }
 
     public function edit($id)

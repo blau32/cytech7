@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="product-show">
+<div class="main-container">
     <h1 class="product-show__title">商品情報詳細画面</h1>
 
     <div class="product-show__wrapper">
@@ -55,8 +55,8 @@
 
         <!-- ボタン部分 -->
         <div class="product-show__button-wrapper">
-            <a href="{{ route('products.edit', $product->id) }}" class="button button--primary">編集</a>
-            <a href="{{ route('products.index') }}" class="button button--back">戻る</a>
+            <a href="{{ route('products.edit', $product->id) }}" class="button product-show__button--edit">編集</a>
+            <a href="{{ route('products.index') }}" class="button product-show__button--back">戻る</a>
         </div>
     </div>
 </div>

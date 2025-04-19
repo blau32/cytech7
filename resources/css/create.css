@@ -102,20 +102,6 @@
     margin-top: 2rem;
 }
 
-/* ボタン共通スタイル */
-.button {
-    display: inline-block;
-    padding: 0.rem 1rem;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 0.5rem;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    min-width: 6.5rem;
-    transition: background-color 0.2s;
-}
-
 /* 各種ボタンの色 */
 .product-create__button-register {
     background-color: #f48a12;

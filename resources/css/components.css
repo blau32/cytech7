@@ -6,6 +6,25 @@
 }
 
 
+
+
+/* ボタン共通スタイル */
+.button {
+    display: inline-block;
+    padding: 0.rem 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 6.5rem;
+    transition: background-color 0.2s;
+}
+
+
+
+
 .alert {
     width: 100%;
     max-width: 600px;
@@ -17,4 +36,14 @@
     color: #d8000c;
     font-size: 1rem;
     line-height: 1.5;
+}
+
+/* ------------------------------ */
+
+/* create,show,editボタン配置 */
+.product-show__button-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin-top: 2rem;
 }
