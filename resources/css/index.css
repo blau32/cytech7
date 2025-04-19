@@ -1,10 +1,3 @@
-
-.product-index__title {
-    font-size: 2rem;
-    margin-bottom: 2.5rem;
-    text-align: left;
-}
-
 /* 検索フォーム全体 */
 .product-index__form {
     display: flex;
@@ -85,11 +78,6 @@
     padding: 0.5rem;
     font-weight: normal;
 }
-
-/* .product-index__button-controller {
-    display: inline-block;
-    gap: 2rem;
-} */
 
 .product-index__button--detail {
     background-color: #21e2f3;

@@ -1,28 +1,15 @@
-/* 共通内容 */
+/* 全viewファイル共通内容 */
 .main-container {
     padding: 2rem;
     margin: 0 auto;
     max-width: 960px;
 }
 
-
-
-
-/* ボタン共通スタイル */
-.button {
-    display: inline-block;
-    padding: 0.rem 1rem;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 0.5rem;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    min-width: 6.5rem;
-    transition: background-color 0.2s;
+.product-common__title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    text-align: left;
 }
-
-
 
 
 .alert {
@@ -38,12 +25,113 @@
     line-height: 1.5;
 }
 
-/* ------------------------------ */
+/* create,show,editファイル内共通------------------------------ */
 
-/* create,show,editボタン配置 */
-.product-show__button-wrapper {
+/* 共通コンテナ */
+.product-common__wrapper {
+    width: 60%;
+    padding: 2rem;
+    border: 1px solid #000;
+    border-radius: 0.5rem;
+}
+
+/* ラベル */
+.product-common__label {
+    width: 12rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: left;
+    line-height: 2.5rem;
+}
+
+
+/* 共通ボタンスタイル */
+.button {
+    display: inline-block;
+    padding: 0.rem 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 6.5rem;
+    transition: background-color 0.2s;
+}
+
+/* ボタン配置 */
+.product-common__button-wrapper {
     display: flex;
     justify-content: flex-start;
     gap: 2rem;
     margin-top: 2rem;
+}
+
+.product-common__button--register--update--edit {
+    background-color: #f48a12;
+    color: black;
+}
+
+.product-common__button--back {
+    background-color:#21e2f3;
+    color: black;
+}
+
+/* create, editファイル共通 -------------------------------------------------------*/
+.product-common__errors {
+    margin-bottom: 2rem;
+}
+
+.product-common__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.product-common__form-item {
+    display: flex;
+    align-items: flex-start; /* コメントの高さに揃えるため上寄せ */
+    gap: 2rem;
+}
+
+/* 必須マーク */
+.product-common__required {
+    color: red;
+    margin-left: 0.25rem;
+    font-size: 1.25rem;
+}
+
+/* 共通フォーム要素（input, select, textarea） */
+.product-common__input,
+.product-common__select,
+.product-common__textarea,
+.product-common__file {
+    flex: 1;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+
+.product-common__file {
+    width: 8rem;                  /* ← ボタンの横幅を狭くする */
+    font-size: 0;                 /* ← テキストを見えなくする（選択されていません） */
+    color: transparent;          /* ← 念のため透明にする */
+    border: none;
+    background-color: #f8f8f8;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/* Chrome系で「ファイルを選択」ボタンの見た目調整 */
+.product-common__file::-webkit-file-upload-button {
+    font-size: 1rem;
+    padding: 0.2rem 2rem;
+    color: #000;
+    background-color: #e0e0e0;
+    border: 1px solid #aaa;
+    border-radius: 0.25rem;
+    cursor: pointer;
 }

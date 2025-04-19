@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="main-container">
-    <h1 class="product-index__title">商品一覧画面</h1>
+    <h1 class="product-common__title">商品一覧画面</h1>
 
     <!-- 検索フォーム -->
     <form method="GET" action="{{ route('products.index') }}" class="product-index__form">

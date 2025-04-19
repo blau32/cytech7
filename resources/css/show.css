@@ -1,30 +1,8 @@
-
-.product-show__title {
-    font-size: 2rem;
-    margin-bottom: 2.5rem;
-    text-align: left;
-}
-
-.product-show__wrapper {
-    width: 60%;
-    padding: 2rem;
-    border: 1px solid #000;
-    border-radius: 0.5rem;
-}
-
 .product-show__item {
     display: flex;
     align-items: flex-start; /* ← これが超重要（中央→上端揃え） */
     gap: 2rem;
     margin-bottom: 1.5rem;
-}
-
-.product-show__label {
-    width: 12rem;
-    font-size: 1.25rem;
-    font-weight: bold;
-    text-align: left;
-    line-height: 2.5rem;
 }
 
 .product-show__value {
@@ -46,23 +24,4 @@
     border-radius: 0.25rem;
     resize: none;
     background-color: #f9f9f9;
-}
-
-
-/* ボタン配置 */
-.product-show__button-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.product-show__button--edit {
-    background-color: #f48a12;
-    color: black;
-}
-
-.product-show__button--back {
-    background-color:#21e2f3;
-    color: black;
 }
