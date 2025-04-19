@@ -95,9 +95,11 @@
             <!-- 画像 -->
             <div class="product-create__form-item">
                 <label for="img_path" class="product-create__label">商品画像</label>
-                <div class="product-create__file-container">
-                    <input type="file" name="img_path" class="product-create__file">
-                </div>
+                <input
+                    type="file"
+                    name="img_path"
+                    id="img_path"
+                    class="product-create__file">
             </div>
 
             <!-- ボタン -->

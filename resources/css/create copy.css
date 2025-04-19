@@ -25,7 +25,7 @@
 /* フォームの各項目 */
 .product-create__form-item {
     display: flex;
-    align-items: center;     /* ← 中央寄せで上下揃える */
+    align-items: center;
     gap: 2rem;
 }
 
@@ -35,15 +35,6 @@
     font-size: 1.25rem;
     font-weight: bold;
     text-align: left;
-    line-height: 2.5rem;      /* ← inputと縦を合わせる */
-}
-
-/* ラッパー：他inputと同じ高さを明示 */
-.product-create__file-container {
-    flex: 1;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
 }
 
 /* 必須マーク */
@@ -72,27 +63,22 @@
 }
 
 .product-create__file {
-    width: 8rem;                  /* ← ボタンの横幅を狭くする */
-    font-size: 0;                 /* ← テキストを見えなくする（選択されていません） */
-    color: transparent;          /* ← 念のため透明にする */
+    flex: 1;
+    height: 2.5rem;           /* ← 他のinputと揃える高さに強制 */
+    padding: 0 0.75rem;
+    font-size: 1rem;
     border: none;
-    background-color: #f8f8f8;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
+    background-color: transparent;
+    outline: none;
+    display: inline-block;
     box-sizing: border-box;
-    cursor: pointer;
 }
 
-/* ファイルボタンの擬似要素にスタイルを強制（Chromeなどに効く） */
 .product-create__file::-webkit-file-upload-button {
-    font-size: 1rem;              /* ← ボタン内の文字は表示する */
-    padding: 0.2rem 2rem;
-    color: #000;
-    background-color: #e0e0e0;
-    border: 1px solid #aaa;
-    border-radius: 0.25rem;
-    cursor: pointer;
+    border: none;
+    background: transparent;
 }
+
 
 /* ボタン配置 */
 .product-create__button-wrapper {

@@ -1,0 +1,20 @@
+/* 共通内容 */
+.main-container {
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+
+.alert {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #f44336;
+    background-color: #ffecec;
+    color: #d8000c;
+    font-size: 1rem;
+    line-height: 1.5;
+}

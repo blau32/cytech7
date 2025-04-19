@@ -1,18 +1,16 @@
-.product-index {
-    padding: 2rem;
-}
 
 .product-index__title {
     font-size: 2rem;
     margin-bottom: 2.5rem;
+    text-align: left;
 }
 
 /* 検索フォーム全体 */
 .product-index__form {
-    margin-bottom: 2rem;
     display: flex;
-    gap: 2rem;
-    align-items: center;
+    justify-content: flex-start; /* ← 左寄せ */
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 .product-index__form-input,
@@ -47,6 +45,7 @@
     border-collapse: collapse;
     border: 1px solid #000;
     font-size: 1.5rem;
+    text-align: left;
 }
 
 .product-index__table th,
@@ -80,38 +79,33 @@
     color: #000;
 }
 
-.product-index__button--primary {
+.product-index__button--register {
     background-color: #f48a12;
     width: 6.5rem;
     padding: 0.5rem;
+    font-weight: normal;
 }
+
+/* .product-index__button-controller {
+    display: inline-block;
+    gap: 2rem;
+} */
 
 .product-index__button--detail {
     background-color: #21e2f3;
     padding: 0.2rem 1.5rem;
+    margin: 0 0.5em;
 }
 
 .product-index__button--delete {
     background-color: #f44336;
     color: white;
-    padding: 0.2rem 1.5rem;;
+    padding: 0.2rem 1.5rem;
+    margin: 0 0.5em;
 }
 
 /* ページネーション */
 .product-index__pagination {
     margin-top: 2rem;
     text-align: center;
-}
-
-.alert {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto 2rem auto;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid #f44336;
-    background-color: #ffecec;
-    color: #d8000c;
-    font-size: 1rem;
-    line-height: 1.5;
 }

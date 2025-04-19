@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="product-index">
+<div class="main-container">
     <h1 class="product-index__title">商品一覧画面</h1>
 
     <!-- 検索フォーム -->
@@ -11,18 +11,16 @@
             name="keyword"
             value="{{ request('keyword') }}"
             placeholder="検索キーワード"
-            class="product-index__form-input"
-        >
+            class="product-index__form-input">
 
         <select
             name="company_id"
-            class="product-index__form-select"
-        >
+            class="product-index__form-select">
             <option value="">メーカー名</option>
             @foreach ($companies as $company)
-                <option value="{{ $company->id }}" {{ request('company_id') == $company->id ? 'selected' : '' }}>
-                    {{ $company->company_name }}
-                </option>
+            <option value="{{ $company->id }}" {{ request('company_id') == $company->id ? 'selected' : '' }}>
+                {{ $company->company_name }}
+            </option>
             @endforeach
         </select>
 
@@ -42,7 +40,7 @@
                 <th>在庫数</th>
                 <th>メーカー名</th>
                 <th>
-                    <a href="{{ route('products.create') }}" class="product-index__button product-index__button--primary">
+                    <a href="{{ route('products.create') }}" class="product-index__button product-index__button--register">
                         新規登録
                     </a>
                 </th>
@@ -54,9 +52,9 @@
                 <td>{{ $product->id }}</td>
                 <td>
                     @if($product->img_path)
-                        <img src="{{ asset('storage/' . $product->img_path) }}" alt="商品画像" width="50">
+                    <img src="{{ asset('storage/' . $product->img_path) }}" alt="商品画像" width="50">
                     @else
-                        画像なし
+                    画像なし
                     @endif
                 </td>
                 <td>{{ $product->product_name }}</td>
@@ -67,12 +65,12 @@
                     <a href="{{ route('products.show', $product->id) }}" class="product-index__button product-index__button--detail">
                         詳細
                     </a>
+
                     <form
                         action="{{ route('products.destroy', $product->id) }}"
                         method="POST"
                         style="display:inline-block;"
-                        onsubmit="return confirm('本当に削除しますか？')"
-                    >
+                        onsubmit="return confirm('本当に削除しますか？')">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="product-index__button product-index__button--delete">削除</button>
