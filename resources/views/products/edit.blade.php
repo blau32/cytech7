@@ -100,6 +100,13 @@
             </div>
 
             <!-- 商品画像 -->
+            @if ($product->img_path)
+            <div class="product-common__form-item">
+                <label class="product-common__label">現在の画像</label>
+                <img src="{{ asset('storage/' . $product->img_path) }}" alt="現在の画像" width="150">
+            </div>
+            @endif
+
             <div class="product-common__form-item">
                 <label for="img_path" class="product-common__label">商品画像</label>
                 <input
