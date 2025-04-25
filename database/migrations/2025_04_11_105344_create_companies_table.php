@@ -11,9 +11,9 @@ return new class extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->bigIncrements('id'); // メーカーID
             $table->string('company_name'); // メーカー名
-            $table->string('street_address');
-            $table->string('representative_name');
-            $table->timestamps(); // created_at, updated_at
+            $table->string('street_address'); //住所
+            $table->string('representative_name'); //代表者
+            $table->timestamps();  // ※コード規約と合わないが...？
         });
     }
 

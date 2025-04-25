@@ -11,12 +11,13 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id(); // ユーザーID
-            $table->string('username'); // 【username】カラム作成作成
+            $table->string('username'); //
             $table->string('email')->unique(); // メールアドレス（重複不可）
             $table->timestamp('email_verified_at')->nullable(); // メール認証
             $table->string('password'); // パスワード
-            $table->rememberToken(); // ログイン保持用トークン（デフォルトで持っておく）
+            $table->rememberToken(); // ログイン状態をブラウザに保存するためのトークン
             $table->timestamps(); // created_at, updated_at 自動生成
+            // ※コード規約と合わないが...？
         });
     }
 

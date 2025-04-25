@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('comment')->nullable(); // コメント（nullable）
             $table->string('img_path')->nullable(); // 画像パス（nullable）
             $table->softDeletes(); // 削除フラグ
-            $table->timestamps(); // created_at, updated_at 自動設定
+            $table->timestamps();  // ※コード規約と合わないが...？
         });
     }
 

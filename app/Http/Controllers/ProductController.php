@@ -3,13 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Models\Company; // 追加（会社情報用）
+use App\Models\Company;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage; // ファイル保存用
+use Illuminate\Support\Facades\Storage;
 
-
-//route->controller->modelの順で呼び出す
-// Models/Productに処理内容記載。ここでは処理の呼び出しを行う
 class ProductController extends Controller
 {
     //商品一覧画面
@@ -20,6 +17,12 @@ class ProductController extends Controller
         return view('products.index', compact('products', 'companies'));
     }
 
+    //商品登録画面
+    public function create()
+    {
+        $companies = Product::GetCompanyData();
+        return view('products.create', compact('companies'));
+    }
 
     //商品登録処理
     public function store(Request $request)
@@ -27,38 +30,35 @@ class ProductController extends Controller
         return Product::RegisterDate($request);
     }
 
-
-    public function create()
-    {
-        $companies = Product::GetCompanyData();
-        return view('products.create', compact('companies'));
-    }
-
-    /**
-     * 商品削除
-     */
-    public function destroy($id)
-    {
-        return Product::DeleteProductData($id);
-    }
-
-
+    // 商品詳細画面（show）
     public function show($id)
     {
-        // ビューに渡す
         $product = Product::findOrFail($id);
         return view('products.show', compact('product'));
     }
 
+    // 商品編集画面（edit）
     public function edit($id)
     {
         // 編集画面を表示
         return view('products.edit', Product::EditProductData($id));
     }
 
+    // 商品更新処理（update）
     public function update(Request $request, $id)
     {
         return Product::UpdateProductData($request, $id);
     }
+
+    // 商品削除処理（destroy）
+    public function destroy($id)
+    {
+        return Product::DeleteProductData($id);
+    }
+
+
+
+
+
 
 }
