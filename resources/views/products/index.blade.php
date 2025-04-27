@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<!-- layouts.app.blade.phpの@yield('content') -->
 @section('content')
 <div class="main-container">
     <h1 class="product-common__title">商品一覧画面</h1>
@@ -47,7 +47,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($products as $product)
+            @foreach ($products as $product) <!-- テーブルから取り出すイメージ  -->
             <tr class="{{ $loop->odd ? 'row-odd' : 'row-even' }}">
                 <td>{{ $product->id }}</td>
                 <td>
@@ -69,8 +69,8 @@
                     <form
                         action="{{ route('products.destroy', $product->id) }}"
                         method="POST"
-                        style="display:inline-block;"
-                        onsubmit="return confirm('本当に削除しますか？')">
+                        onsubmit="return confirm('本当に削除しますか？')"
+                        class="product-index__form-inline">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="product-index__button product-index__button--delete">削除</button>

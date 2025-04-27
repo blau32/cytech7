@@ -11,7 +11,7 @@ class ProductController extends Controller
     // 商品一覧表示
     public function index(Request $request)
     {
-        $products = Product::search($request);
+        $products = Product::search($request); //DBに対して特定の条件に合うデータのみを取り出す
         $companies = Company::all();
         return view('products.index', compact('products', 'companies'));
     }
