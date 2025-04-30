@@ -20,7 +20,7 @@ class User extends Authenticatable
 
     // $fillable：create()などで許可するカラムを指定する
     protected $fillable = [
-        'username',
+        'name',
         'email',
         'password',
     ];

@@ -22,7 +22,7 @@
             <!-- ユーザー名入力欄 -->
             <input
                 type="text"
-                name="username"
+                name="name"
                 placeholder="ユーザー名"
                 class="register-form__input"
                 required>
