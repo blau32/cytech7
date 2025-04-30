@@ -29,6 +29,7 @@
     'resources/css/show.css' ,
     'resources/css/edit.css' ,
     'resources/css/components.css',
+    'resources/js/app.js',
     ])
 </head>
 

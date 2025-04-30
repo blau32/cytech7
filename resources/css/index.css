@@ -60,9 +60,9 @@
     background-color: #ffffff; /* ホワイト */
 }
 
-/* .product-index__form-inline {
+.product-index__form-inline {
     display: inline-block;
-} */
+}
 
 /* ボタン共通設計 */
 .product-index__button {

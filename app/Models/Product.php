@@ -55,8 +55,10 @@ class Product extends Model
 
         $path = null;
         if ($request->hasFile('img_path')) {
-            $path = $request->file('img_path')->store('images', 'public');
+            $filename = uniqid() . '.' . $request->file('img_path')->getClientOriginalExtension();
+            $path = $request->file('img_path')->storeAs('images', $filename, 'public');
         }
+
 
         self::create(array_merge($validated, ['img_path' => $path]));
     }
@@ -77,8 +79,10 @@ class Product extends Model
 
         $path = $product->img_path;
         if ($request->hasFile('img_path')) {
-            $path = $request->file('img_path')->store('images', 'public');
+            $filename = uniqid() . '.' . $request->file('img_path')->getClientOriginalExtension();
+            $path = $request->file('img_path')->storeAs('images', $filename, 'public');
         }
+
 
         $product->update(array_merge($validated, ['img_path' => $path]));
     }

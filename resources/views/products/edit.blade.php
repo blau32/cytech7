@@ -103,7 +103,7 @@
             @if ($product->img_path)
             <div class="product-common__form-item">
                 <label class="product-common__label">現在の画像</label>
-                <img src="{{ asset('storage/' . $product->img_path) }}" alt="現在の画像" width="150">
+                <img src="{{ asset('storage/' . $product->img_path) }}" alt="現在の画像">
             </div>
             @endif
 

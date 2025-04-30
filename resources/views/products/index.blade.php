@@ -61,8 +61,9 @@
                 <td>¥{{ number_format($product->price) }}</td>
                 <td>{{ $product->stock }}</td>
                 <td>{{ $product->company->company_name ?? '' }}</td>
-                <td>
-                    <a href="{{ route('products.show', $product->id) }}" class="product-index__button product-index__button--detail">
+                <td style="white-space: nowrap;">
+                    <a href="{{ route('products.show', $product->id) }}"
+                        class="product-index__button product-index__button--detail">
                         詳細
                     </a>
 
@@ -70,7 +71,7 @@
                         action="{{ route('products.destroy', $product->id) }}"
                         method="POST"
                         onsubmit="return confirm('本当に削除しますか？')"
-                        class="product-index__form-inline">
+                        style="display: inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="product-index__button product-index__button--delete">削除</button>

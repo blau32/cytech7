@@ -65,7 +65,9 @@
                     name="price"
                     id="price"
                     class="product-common__input"
-                    value="{{ old('price') }}"
+                    value="{{ old('price', $product->price ?? '') }}"
+                    min="0"
+                    step="1"
                     required>
             </div>
 
@@ -79,7 +81,9 @@
                     name="stock"
                     id="stock"
                     class="product-common__input"
-                    value="{{ old('stock') }}"
+                    value="{{ old('stock', $product->stock ?? '') }}"
+                    min="0"
+                    step="1"
                     required>
             </div>
 
@@ -92,14 +96,23 @@
                     class="product-common__textarea">{{ old('comment') }}</textarea>
             </div>
 
-            <!-- 画像 -->
+            <!-- 商品画像選択 -->
             <div class="product-common__form-item">
                 <label for="img_path" class="product-common__label">商品画像</label>
-                <div class="product-create__file-container">
-                    <input type="file" name="img_path" class="product-common__file">
-                </div>
+                <input
+                    type="file"
+                    name="img_path"
+                    id="img_path"
+                    class="product-common__file"
+                    accept="image/*"
+                    onchange="previewImage(event)">
             </div>
 
+            <!-- プレビュー表示用 -->
+            <div class="product-common__form-item">
+                <label class="product-common__label"></label>
+                <img id="preview" src="" alt="プレビュー画像" style="max-width: 200px; display: none;">
+            </div>
             <!-- ボタン -->
             <div class="product-common__button-wrapper">
                 <button type="submit" class="button product-common__button--primary">新規登録</button>
