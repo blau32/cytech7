@@ -20,3 +20,4 @@ Auth::routes();
 
 // 商品CRUD用ルート
 Route::resource('products', ProductController::class);
+

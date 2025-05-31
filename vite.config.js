@@ -14,8 +14,6 @@ export default defineConfig({
                 'resources/css/show.css',
                 'resources/css/edit.css',
                 'resources/css/components.css',
-                'resources/js/app.js',
-
             ],
             refresh: true,
         }),

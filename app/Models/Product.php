@@ -23,15 +23,19 @@ class Product extends Model
     public function company()
     {
         return $this->belongsTo(Company::class);
+        // 商品テーブルから会社テーブルを参照する
     }
 
     // 商品一覧検索
     public static function search(Request $request, int $perPage = 5)
     {
         $query = self::query();
+        //自身のproductクラスのカラムを代入
 
         if ($request->filled('keyword')) {
             $query->where('product_name', 'like', '%' . $request->keyword . '%');
+            // 検索フォームに入力された値を検索条件にする
+            //product_name LIKE "%キーワード%"で検索
         }
 
         if ($request->filled('company_id')) {
@@ -58,9 +62,15 @@ class Product extends Model
             $filename = uniqid() . '.' . $request->file('img_path')->getClientOriginalExtension();
             $path = $request->file('img_path')->storeAs('images', $filename, 'public');
         }
-
+        //hasFile()メソッドは、ファイルの存在を確認するメソッド
+        //uniqid()メソッドは、一意な文字列を生成するメソッド
+        //getClientOriginalExtension()メソッドは、ファイルの拡張子を取得するメソッド
+        //storeAs()メソッドは、ファイルを保存するメソッド
 
         self::create(array_merge($validated, ['img_path' => $path]));
+        //array_merge()メソッドは、配列を結合するメソッド
+        //($validated, ['img_path' => $path]) は、$validated配列と['img_path' => $path]配列を結合する
+        //['img_path' => $path] は、ファイルのパスを格納する
     }
 
     // 商品更新
@@ -93,4 +103,5 @@ class Product extends Model
         $product = self::findOrFail($id);
         $product->delete();
     }
+
 }
