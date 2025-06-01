@@ -7,7 +7,7 @@
 
 ---
 
-### `fix/mysql-recovery`
+### `main`
 - **目的**：MySQLの物理ファイル破損（.ibd desync）後の復旧対応
 - **内容**：
   - `companies`, `products`, `sales` テーブルの復旧（DISC → IMPORT）
